@@ -87,3 +87,8 @@ git diff --cached
 git add <filename>
 git reset <filename>
 git checkout -- <filename> /* removes changes in unstaged files */
+git branch <branch_name>
+git branch /* shows the active branch highlighted */
+git checkout <branch_name> /* switches to this branch */
+
+/* make some changes, eg create a new file */
