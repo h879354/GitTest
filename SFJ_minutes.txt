@@ -84,3 +84,6 @@ git diff
 git diff HEAD
 git diff --staged
 git diff --cached
+git add <filename>
+git reset <filename>
+git checkout -- <filename> /* removes changes in unstaged files */
