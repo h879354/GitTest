@@ -4,3 +4,79 @@ git add <filename> /* to the stage */
 git add *.txt /* to the stage */
 git commit -m "Message text"
 git log
+git remote add origin https://github.com/try-git/try_git.git
+git config --global user.name "h879354"
+git config --global user.email "h879354@stud.u-szeged.hu"
+$ git remote remove https://github.com/try-git/try_git.git
+fatal: No such remote: 'https://github.com/try-git/try_git.git'
+
+$ git remote add origin https://github.com/h879354/GitTest.git
+fatal: remote origin already exists.
+
+git remote remove origin
+
+git remote add origin https://github.com/h879354/GitTest.git
+$ git push origin master
+Username for 'https://github.com':
+Password for 'https://h879354@github.com':
+To https://github.com/h879354/GitTest.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/h879354/GitTest.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+$ git pull
+warning: no common commits
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/h879354/GitTest
+ * [new branch]      master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+THE SOLUTION:
+
+$ git pull origin master --allow-unrelated-histories
+From https://github.com/h879354/GitTest
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+
+$ git push origin master
+Username for 'https://github.com':
+Password for 'https://h879354@github.com':
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 1.08 KiB | 553.00 KiB/s, done.
+Total 11 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/h879354/GitTest.git
+   331a1ea..26ca7f0  master -> master
+
+rm -rf *
+
+$ git clone https://github.com/h879354/GitTest.git
+Cloning into 'GitTest'...
+remote: Enumerating objects: 14, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 14 (delta 2), reused 11 (delta 2), pack-reused 0
+Unpacking objects: 100% (14/14), done.
+
