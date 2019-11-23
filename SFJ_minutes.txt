@@ -1,0 +1,6 @@
+git init
+git status
+git add <filename> /* to the stage */
+git add *.txt /* to the stage */
+git commit -m "Message text"
+git log
