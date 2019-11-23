@@ -94,3 +94,7 @@ git checkout <branch_name> /* switches to this branch */
 /* make some changes, eg create a new file */
 git merge <branch_name_to_merge_with_this_active_branch>
 git -d <old_branch_name>
+/* delete files from the branch */
+git rm <filename>
+git commit -m "<filename> was deleted" /* NO FILENAME WHEN COMITTING DELETION!! */
+git push origin master
